@@ -21,9 +21,7 @@ export default class extends Controller {
     this.buttonToShowTarget.className = this.visibleClass;
   }
 
-  show(event, element = null) {
+  show(event) {
     this.dropDownToShowTarget.className = this.visibleClass;
-    // if (element) {
-    // }
   }
 }
