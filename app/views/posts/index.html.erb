@@ -1,0 +1,11 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<%= tag.div data: { controller: 'hello' }  %>
+
+<%= tag.div data: { controller: 'toggle', toggle_hidden_class: 'hide-me' } do %>
+  <%= tag.button 'Toggle visibility', data: { action: 'click->toggle#toggleVisibility' }%>
+  <%= tag.div 'Toggle my visibility', data: { toggle_target: 'divToToggle' } %>
+<% end %>
+
+
