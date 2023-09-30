@@ -3,9 +3,11 @@
 
 <%= tag.div data: { controller: 'hello' }  %>
 
-<%= tag.div data: { controller: 'toggle', toggle_hidden_class: 'hide-me' } do %>
+<%= tag.div data: { controller: 'toggle', toggle_hidden_class: 'hide-me', toggle_visible_class: 'show-me' } do %>
   <%= tag.button 'Toggle visibility', data: { action: 'click->toggle#toggleVisibility' }%>
   <%= tag.div 'Toggle my visibility', data: { toggle_target: 'divToToggle' } %>
+  <%= tag.button 'Show dropdown', data: { action: 'toggle#show' } %>
+  <%= select_tag 'number of items', options_for_select(%w[a b c], :b), class: 'hide-me', data: { toggle_target: 'dropDownToShow' } %>
 <% end %>
 
 

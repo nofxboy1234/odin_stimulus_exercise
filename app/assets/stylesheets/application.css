@@ -16,3 +16,7 @@
 .hide-me {
   visibility: hidden;
 }
+
+.show-me {
+  visibility: visible;
+}
