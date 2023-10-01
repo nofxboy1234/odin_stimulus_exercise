@@ -6,7 +6,7 @@
 <%= tag.div data: { controller: 'toggle', toggle_hidden_class: 'hide-me', toggle_visible_class: 'show-me', toggle_highlight_class: 'highlight-me' } do %>
   <%= tag.button 'Toggle visibility', data: { action: 'click->toggle#toggleVisibility', toggle_element_param: 'divToToggle' }%>
   <%= tag.div 'Toggle my visibility', data: { toggle_target: 'divToToggle' } %>
-  <%= tag.button 'Show dropdown', data: { action: 'toggle#show' } %>
+  <%= tag.button 'Show dropdown', data: { action: 'toggle#show', toggle_element_param: 'dropDownToShow' } %>
   
   <%= select_tag 'items', options_for_select(%w[a b c], :b), class: 'hide-me', data: { toggle_target: 'dropDownToShow' } %><br>
   <%= tag.select name: 'items', id: 'items', class: 'show-me', data: { toggle_target: 'dropDownToShow2' }  do %>

@@ -24,7 +24,7 @@ export default class extends Controller {
   hideThenShow({ params: { hide, show } }) {
     console.log(hide)
     console.log(show)
-    
+
     this.targets.find(hide).className = this.hiddenClass
     // this.buttonToHideTarget.className = this.hiddenClass;
     this.targets.find(show).className = this.visibleClass
@@ -35,8 +35,10 @@ export default class extends Controller {
 
   }
 
-  show(event) {
-    this.dropDownToShowTarget.className = this.visibleClass;
+  show({ params: { element } }) {
+    console.log(element)
+    this.targets.find(element).className = this.visibleClass
+    // this.dropDownToShowTarget.className = this.visibleClass;
   }
 
   highlightParent(event) {
