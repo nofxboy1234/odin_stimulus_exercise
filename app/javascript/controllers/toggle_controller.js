@@ -12,8 +12,13 @@ export default class extends Controller {
 
   connect() {}
 
-  toggleVisibility() {
-    this.divToToggleTarget.classList.toggle(this.hiddenClass);
+  toggleVisibility({ params: { element } }) {
+    // console.log(event.params['element'])
+    // console.log(params)
+    console.log(element)
+    console.log(typeof element)
+    console.log(this.targets.find(element))
+    this.targets.find(element).classList.toggle(this.hiddenClass);
   }
 
   hideThenShow() {
