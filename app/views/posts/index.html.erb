@@ -7,10 +7,19 @@
   <%= tag.button 'Toggle visibility', data: { action: 'click->toggle#toggleVisibility' }%>
   <%= tag.div 'Toggle my visibility', data: { toggle_target: 'divToToggle' } %>
   <%= tag.button 'Show dropdown', data: { action: 'toggle#show' } %>
-  <%= select_tag 'number of items', options_for_select(%w[a b c], :b), class: 'hide-me', data: { toggle_target: 'dropDownToShow' } %><br>
+  
+  <%= select_tag 'items', options_for_select(%w[a b c], :b), class: 'hide-me', data: { toggle_target: 'dropDownToShow' } %><br>
+  <%= tag.select name: 'items', id: 'items', class: 'show-me', data: { toggle_target: 'dropDownToShow2' }  do %>
+    <%= options_for_select(%w[a b c], :b) %>
+  <% end %>
+  <%= tag.select options_for_select(%w[a b c], :b), name: 'items', id: 'items', class: 'show-me', data: { toggle_target: 'dropDownToShow2' } %>
+
   <%= tag.button 'Hide me and show another button', data: { action: 'toggle#hideThenShow', toggle_target: 'buttonToHide' } %>
   <%= tag.button 'Show me after hiding other button', data: { toggle_target: 'buttonToShow' }, class: 'hide-me' %><br>
+  
   <%= check_box_tag 'accept', '1', false , data: { action: 'change->toggle#highlightParent' } %>
+  <%= tag.input type: 'checkbox', name: 'accept', id: 'accept', value: '1', data: { action: 'change->toggle#highlightParent' } %>
+
 <% end %>
 
 
