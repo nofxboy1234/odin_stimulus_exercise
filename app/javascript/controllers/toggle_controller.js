@@ -15,33 +15,40 @@ export default class extends Controller {
   toggleVisibility({ params: { element } }) {
     // console.log(event.params['element'])
     // console.log(params)
-    console.log(element)
-    console.log(typeof element)
-    console.log(this.targets.find(element))
+    console.log(element);
+    console.log(typeof element);
+    console.log(this.targets.find(element));
     this.targets.find(element).classList.toggle(this.hiddenClass);
   }
 
-  hideThenShow({ params: { hide, show } }) {
-    console.log(hide)
-    console.log(show)
+  hideThenShow(event) {
+    const hide_element = event.params['hide']
+    const show_element = event.params['show']
 
-    this.targets.find(hide).className = this.hiddenClass
+    console.log(hide_element);
+    console.log(show_element);
+
+    this.hide(hide_element);
+    // this.targets.find(hide_element).className = this.hiddenClass;
     // this.buttonToHideTarget.className = this.hiddenClass;
-    this.targets.find(show).className = this.visibleClass
+
+    this.show(event);
+    // this.targets.find(show_element).className = this.visibleClass;
     // this.buttonToShowTarget.className = this.visibleClass;
   }
 
-  hide({ params: { element } }) {
-
+  hide(element) {
+    console.log(element);
+    this.targets.find(element).className = this.hiddenClass;
   }
 
-  show({ params: { element } }) {
-    console.log(element)
-    this.targets.find(element).className = this.visibleClass
+  show({ params: { show } }) {
+    console.log(show);
+    this.targets.find(show).className = this.visibleClass;
     // this.dropDownToShowTarget.className = this.visibleClass;
   }
 
   highlightParent(event) {
-    this.element.classList.toggle(this.highlightClass)
+    this.element.classList.toggle(this.highlightClass);
   }
 }
