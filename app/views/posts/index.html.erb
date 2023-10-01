@@ -18,8 +18,12 @@
   <%= tag.button 'Show me after hiding other button', data: { toggle_target: 'buttonToShow' }, class: 'hide-me' %><br>
   
   <%= check_box_tag 'accept', '1', false , data: { action: 'change->toggle#highlightParent' } %>
-  <%= tag.input type: 'checkbox', name: 'accept', id: 'accept', value: '1', data: { action: 'change->toggle#highlightParent' } %>
+  <%= tag.input type: 'checkbox', name: 'accept', id: 'accept', value: '1', data: { action: 'change->toggle#highlightParent' } %><br>
 
+<% end %>
+
+<%= tag.div data: { controller: 'tweet' } do %>
+  <%= text_area_tag 'name', nil, data: { action: 'input->tweet#checkLength' } %>
 <% end %>
 
 
