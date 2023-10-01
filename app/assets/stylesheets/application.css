@@ -20,3 +20,7 @@
 .show-me {
   visibility: visible;
 }
+
+.highlight-me {
+  border: 1px solid red;
+}

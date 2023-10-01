@@ -8,7 +8,7 @@ export default class extends Controller {
     'buttonToHide',
     'buttonToShow',
   ];
-  static classes = ['hidden', 'visible'];
+  static classes = ['hidden', 'visible', 'highlight'];
 
   connect() {}
 
@@ -23,5 +23,18 @@ export default class extends Controller {
 
   show(event) {
     this.dropDownToShowTarget.className = this.visibleClass;
+  }
+
+  highlightParent(event) {
+    this.element.classList.toggle(this.highlightClass)
+    // if (event.target.checked) {
+    // }
+    // else {
+
+    // }
+
+    // if (event.target.checked)
+
+    // console.log(this.element)
   }
 }
