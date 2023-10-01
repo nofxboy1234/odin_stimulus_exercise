@@ -14,7 +14,7 @@
   <% end %>
   <%= tag.select options_for_select(%w[a b c], :b), name: 'items', id: 'items', class: 'show-me', data: { toggle_target: 'dropDownToShow2' } %>
 
-  <%= tag.button 'Hide me and show another button', data: { action: 'toggle#hideThenShow', toggle_target: 'buttonToHide' } %>
+  <%= tag.button 'Hide me and show another button', data: { action: 'toggle#hideThenShow', toggle_target: 'buttonToHide', toggle_hide_param: 'buttonToHide', toggle_show_param: 'buttonToShow' } %>
   <%= tag.button 'Show me after hiding other button', data: { toggle_target: 'buttonToShow' }, class: 'hide-me' %><br>
   
   <%= check_box_tag 'accept', '1', false , data: { action: 'change->toggle#highlightParent' } %>

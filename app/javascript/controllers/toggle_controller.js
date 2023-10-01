@@ -21,9 +21,18 @@ export default class extends Controller {
     this.targets.find(element).classList.toggle(this.hiddenClass);
   }
 
-  hideThenShow() {
-    this.buttonToHideTarget.className = this.hiddenClass;
-    this.buttonToShowTarget.className = this.visibleClass;
+  hideThenShow({ params: { hide, show } }) {
+    console.log(hide)
+    console.log(show)
+    
+    this.targets.find(hide).className = this.hiddenClass
+    // this.buttonToHideTarget.className = this.hiddenClass;
+    this.targets.find(show).className = this.visibleClass
+    // this.buttonToShowTarget.className = this.visibleClass;
+  }
+
+  hide({ params: { element } }) {
+
   }
 
   show(event) {
