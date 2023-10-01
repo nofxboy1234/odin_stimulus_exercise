@@ -22,8 +22,9 @@
 
 <% end %>
 
-<%= tag.div data: { controller: 'tweet' } do %>
+<%= tag.div data: { controller: 'tweet', tweet_hidden_class: 'hide-me', tweet_visible_class: 'show-me', tweet_warning_class: 'warning' } do %>
   <%= text_area_tag 'name', nil, data: { action: 'input->tweet#checkLength' } %>
+  <%= tag.div 'Max Tweet length exceeded!', data: { tweet_target: 'warning' }, class: 'hide-me' %>
 <% end %>
 
 
