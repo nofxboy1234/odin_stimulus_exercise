@@ -27,14 +27,5 @@ export default class extends Controller {
 
   highlightParent(event) {
     this.element.classList.toggle(this.highlightClass)
-    // if (event.target.checked) {
-    // }
-    // else {
-
-    // }
-
-    // if (event.target.checked)
-
-    // console.log(this.element)
   }
 }
